@@ -7,6 +7,6 @@ COMMANDS:
     exit -> close LFInteractive
 
 Example:
-    ./app.py http://intranet.businesscorp.com.br:10000/unauthenticated/..%01/..%01/..%01/..%01/..%01/..%01/..%01/..%01/..%01/..%01
+    ./app.py http://example.com/../../../../../../../../../..
 ```
 <img src="https://i.imgur.com/dyBhTF3.png">
