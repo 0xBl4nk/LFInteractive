@@ -4,6 +4,9 @@ import requests
 import sys
 import os
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def exploit_lfi(url):
     while True:
         command = input('CAT> ')
@@ -20,4 +23,3 @@ if __name__ == '__main__':
     os.system('clear')
     url = sys.argv[1]
     exploit_lfi(url)
-
